@@ -1,0 +1,22 @@
+### test
+POST localhost:8080/hello
+
+### upload via restTemplate
+POST localhost:8080/client
+
+### upload here
+POST localhost:8080/upload
+Content-Type: multipart/form-data; boundary=WebAppBoundary
+
+--WebAppBoundary
+Content-Disposition: form-data; name="element-name"
+Content-Type: text/plain
+
+Name
+--WebAppBoundary
+Content-Disposition: form-data; name="file"; filename="data.csv"
+Content-Type: text/csv
+
+< ./data.csv
+--WebAppBoundary--
+
